@@ -71,7 +71,7 @@ function DrawResultBanner({
 
       if (!drawResult.won && bannerRef.current) {
         gsap.to(bannerRef.current, {
-          x: [-6, 6, -4, 4, -2, 2, 0],
+          x: [-6, 6, -4, 4, -2, 2, 0] as any,
           duration: 0.5,
           delay: 0.8,
           ease: 'power2.inOut',
