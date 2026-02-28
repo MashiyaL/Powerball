@@ -125,7 +125,7 @@ export default function PreviousWinners() {
           amount:      formatEther(log.args.amount),
           matchCount:  Number(log.args.matchCount),
           txHash:      log.transactionHash ?? '',
-          blockNumber: log.blockNumber ?? 0n,
+          blockNumber: log.blockNumber ?? BigInt(0),
           timestamp:   new Date().toLocaleString(),
         };
         setWinners(prev => [newWinner, ...prev]);
