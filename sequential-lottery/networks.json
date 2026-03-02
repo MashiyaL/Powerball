@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "Lotto": {
+      "address": "0xa9348bA3555913d5c4aE31Da6ee7063Ec0C3B8A9",
+      "startBlock": 10351652
+    }
+  }
+}

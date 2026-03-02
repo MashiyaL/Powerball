@@ -1,14 +1,21 @@
 {
   "type": "commonjs",
+  "scripts": {
+    "server": "node server.js",
+    "server:dev": "nodemon server.js"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@nomicfoundation/hardhat-verify": "^2.0.0",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "hardhat": "^2.22.0"
+    "hardhat": "^2.22.0",
+    "nodemon": "^3.1.14"
   },
   "dependencies": {
     "@chainlink/contracts": "^1.5.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.3.1",
-    "ethers": "^5.8.0"
+    "ethers": "^5.8.0",
+    "express": "^5.2.1"
   }
 }

@@ -1,0 +1,47 @@
+specVersion: 1.3.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Lotto
+    network: sepolia
+    source:
+      address: "0xa9348bA3555913d5c4aE31Da6ee7063Ec0C3B8A9"
+      abi: Lotto
+      startBlock: 10351652
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - CoordinatorSet
+        - DrawComplete
+        - DrawInitiated
+        - OwnershipTransferRequested
+        - OwnershipTransferred
+        - PrizePaid
+        - TicketPurchased
+        - WinningNumbersDrawn
+      abis:
+        - name: Lotto
+          file: ./abis/Lotto.json
+      eventHandlers:
+        - event: CoordinatorSet(address)
+          handler: handleCoordinatorSet
+        - event: DrawComplete(uint256)
+          handler: handleDrawComplete
+        - event: DrawInitiated(uint256)
+          handler: handleDrawInitiated
+        - event: OwnershipTransferRequested(indexed address,indexed address)
+          handler: handleOwnershipTransferRequested
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PrizePaid(indexed address,uint256,uint8)
+          handler: handlePrizePaid
+        - event: TicketPurchased(indexed address,uint8[7])
+          handler: handleTicketPurchased
+        - event: WinningNumbersDrawn(uint8[7])
+          handler: handleWinningNumbersDrawn
+      file: ./src/lotto.ts

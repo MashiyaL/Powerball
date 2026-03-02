@@ -1,0 +1,18 @@
+{
+  "name": "sequential-lottery",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ sequential-lottery",
+    "create-local": "graph create --node http://localhost:8020/ sequential-lottery",
+    "remove-local": "graph remove --node http://localhost:8020/ sequential-lottery",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 sequential-lottery",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.98.1",
+    "@graphprotocol/graph-ts": "0.37.0"
+  },
+  "devDependencies": { "matchstick-as": "0.6.0" }
+}
