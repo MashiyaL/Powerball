@@ -64,10 +64,10 @@ app.get('/api/lottery-history', async (req, res) => {
 
     res.json({
       tickets:        data.ticketPurchaseds,
-      drawsInitiated: data.drawInitiateds,    // was: draws
+      drawsInitiated: data.drawInitiateds,    
       winners:        data.winningNumbersDrawns,
       prizes:         data.prizePaids,
-      drawsComplete:  data.drawCompletes,     // was: history
+      drawsComplete:  data.drawCompletes,     
     });
   } catch (error) {
     console.error("Network/Server Error:", error.message);
